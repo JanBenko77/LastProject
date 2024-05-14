@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 public class InteractableScript : MonoBehaviour
 {
-    private Collider interactor;
-    private bool isUsed;
+    private List<Collider> interactorCollider = new List<Collider>();
+    private List<GameObject> attachedHands = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -25,15 +26,17 @@ public class InteractableScript : MonoBehaviour
 
     void OnInteractEnter(SelectEnterEventArgs args){
         ChangeLayer("Interacting");
-        interactor = args.interactorObject.transform.gameObject.GetComponent<Collider>();
-        isUsed = true;
+        interactorCollider.Add(args.interactorObject.transform.gameObject.GetComponent<Collider>());
+        attachedHands.Add(args.interactorObject.transform.gameObject);
     }
     void OnInteractExit(SelectExitEventArgs args){
-        isUsed = false;
+         attachedHands.Remove(args.interactorObject.transform.gameObject);
     }
 
     void OnTriggerExit(Collider other){
-        if(interactor == other && !isUsed)
-        ChangeLayer("Default");
+        if(interactorCollider.Contains(other) && attachedHands.Count <= 0){
+            ChangeLayer("Default");
+            interactorCollider.Remove(other);
+        }
     }
 }
