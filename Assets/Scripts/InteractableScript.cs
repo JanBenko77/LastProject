@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 public class InteractableScript : MonoBehaviour
 {
+    private Collider interactor;
+    private bool isUsed;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +25,15 @@ public class InteractableScript : MonoBehaviour
 
     void OnInteractEnter(SelectEnterEventArgs args){
         ChangeLayer("Interacting");
+        interactor = args.interactorObject.transform.gameObject.GetComponent<Collider>();
+        isUsed = true;
     }
     void OnInteractExit(SelectExitEventArgs args){
-        Invoke("SetDefaultLayer",.5f);
+        isUsed = false;
     }
 
-    void SetDefaultLayer() {
+    void OnTriggerExit(Collider other){
+        if(interactor == other && !isUsed)
         ChangeLayer("Default");
     }
 }

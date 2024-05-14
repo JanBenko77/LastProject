@@ -6,6 +6,7 @@ public class HandPhysicsScript : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private Renderer nonPhysicsHand;
     [SerializeField] private float nonPhysicsHandDistance = 0.05f;
+    private float maxDistance = 0.5f;
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,9 @@ public class HandPhysicsScript : MonoBehaviour
         float distance = Vector3.Distance(transform.position,target.position);
         if(distance > nonPhysicsHandDistance){
             nonPhysicsHand.enabled = true;
+            if(distance > maxDistance)
+                transform.position = target.position;
+
         }
         else
             nonPhysicsHand.enabled = false;
