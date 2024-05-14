@@ -1,3 +1,4 @@
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 public class InteractableScript : MonoBehaviour
@@ -16,19 +17,18 @@ public class InteractableScript : MonoBehaviour
         
     }
 
+    void ChangeLayer(string layer){
+        gameObject.SetLayerRecursively(LayerMask.NameToLayer(layer));
+    }
+
     void OnInteractEnter(SelectEnterEventArgs args){
         ChangeLayer("Interacting");
     }
-
     void OnInteractExit(SelectExitEventArgs args){
-        Invoke("SetDefaultLayer",0.2f);
+        Invoke("SetDefaultLayer",.5f);
     }
 
-    void ChangeLayer(string layer){
-        gameObject.layer = LayerMask.NameToLayer(layer);
-    }
-
-    void SetDefaultLayer(){
+    void SetDefaultLayer() {
         ChangeLayer("Default");
     }
 }
