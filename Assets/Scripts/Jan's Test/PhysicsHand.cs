@@ -54,7 +54,7 @@ public class PhysicsHand : MonoBehaviour
         float ksg = kp * g;
         float kdg = (kd + kp * Time.fixedDeltaTime) * g;
         Quaternion q = target.rotation * Quaternion.Inverse(transform.rotation);
-        if (q.w < 0f)
+        if (q.w < 0)
         {
             q.x = -q.x;
             q.y = -q.y;
@@ -64,7 +64,7 @@ public class PhysicsHand : MonoBehaviour
         q.ToAngleAxis(out float angle, out Vector3 axis);
         axis.Normalize();
         axis *= Mathf.Deg2Rad;
-        Vector3 torque = ksg * axis * angle + rb.angularVelocity * kdg;
+        Vector3 torque = ksg * axis * angle + -rb.angularVelocity * kdg;
         rb.AddTorque(torque, ForceMode.Acceleration);
     }
 
@@ -75,14 +75,15 @@ public class PhysicsHand : MonoBehaviour
         float drag = GetDrag();
 
         playerRb.AddForce(force, ForceMode.Acceleration);
-        playerRb.AddForce(-playerRb.velocity * drag * climbDrag, ForceMode.Acceleration);
+        playerRb.AddForce(drag * -playerRb.velocity * climbDrag, ForceMode.Acceleration);
+        Debug.Log("Hitting");
     }
 
     private float GetDrag()
     {
         Vector3 handVelocity = (target.localPosition - previousPosition) / Time.fixedDeltaTime;
         float drag = 1 / handVelocity.magnitude + 0.01f;
-        drag = drag > 1f ? 1f : drag;
+        drag = drag > 1 ? 1 : drag;
         drag = drag < 0.03f ? 0.03f : drag;
         previousPosition = transform.position;
         return drag;
@@ -93,5 +94,8 @@ public class PhysicsHand : MonoBehaviour
         isColliding = true;
     }
 
-    private void OnCollisionExit(Collision collision) { isColliding = false; }
+    private void OnCollisionExit(Collision collision)
+    {
+        isColliding = false;
+    }
 }
