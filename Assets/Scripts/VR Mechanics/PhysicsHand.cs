@@ -76,7 +76,7 @@ public class PhysicsHand : MonoBehaviour
 
         playerRb.AddForce(force, ForceMode.Acceleration);
         playerRb.AddForce(drag * -playerRb.velocity * climbDrag, ForceMode.Acceleration);
-        Debug.Log("Hitting");
+        //Debug.Log("Hitting");
     }
 
     private float GetDrag()
