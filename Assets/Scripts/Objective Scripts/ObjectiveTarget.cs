@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectiveTarget : MonoBehaviour
 {
+    public ObjectiveType requiredType;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +13,13 @@ public class ObjectiveTarget : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnTriggerEnter(Collider other){
+        if(other.TryGetComponent(out ObjectiveItem item)){
+            if(item.ObjectiveType == requiredType){
+
+            }
+        }
     }
 }
