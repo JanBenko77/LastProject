@@ -8,9 +8,22 @@ public class ClimbPhysics : MonoBehaviour
     [SerializeField] private InputActionProperty grabInputSource;
     [SerializeField] private float radius = 0.1f;
     [SerializeField] private LayerMask grabLayer;
+    [SerializeField] private PhysicsHand hand;
 
     private FixedJoint fixedJoint;
     private bool isGrabbing = false;
+
+    private void Update()
+    {
+        if (isGrabbing)
+        {
+            hand.PreventCollision();
+        }
+        else
+        {
+            hand.ContinueCollision();
+        }
+    }
 
     private void FixedUpdate()
     {

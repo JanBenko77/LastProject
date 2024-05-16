@@ -15,9 +15,12 @@ public class PhysicsHand : MonoBehaviour
 
     [SerializeField] private float climbForce = 1000f;
     [SerializeField] private float climbDrag = 500f;
+    [SerializeField] private Vector3 maxForce = new Vector3(1000f, 1000f, 1000f);
     private Vector3 previousPosition;
 
     private bool isColliding = false;
+
+    private BoxCollider boxCollider;
 
     private void Start()
     {
@@ -26,6 +29,7 @@ public class PhysicsHand : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.maxAngularVelocity = float.PositiveInfinity;
         previousPosition = transform.position;
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     private void FixedUpdate()
@@ -43,6 +47,9 @@ public class PhysicsHand : MonoBehaviour
         float ksg = kp * g;
         float kdg = (kd + kp * Time.fixedDeltaTime) * g;
         Vector3 force = (target.position - transform.position) * ksg + (playerRb.velocity - rb.velocity) * kdg;
+        Mathf.Clamp(force.x, -maxForce.x, maxForce.x);
+        Mathf.Clamp(force.y, -maxForce.y, maxForce.y);
+        Mathf.Clamp(force.z, -maxForce.z, maxForce.z);
         rb.AddForce(force, ForceMode.Acceleration);
     }
 
@@ -98,5 +105,15 @@ public class PhysicsHand : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         isColliding = false;
+    }
+
+    public void PreventCollision()
+    {
+        boxCollider.enabled = false;
+    }
+
+    public void ContinueCollision()
+    {
+        boxCollider.enabled = true;
     }
 }
