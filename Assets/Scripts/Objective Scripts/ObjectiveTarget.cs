@@ -25,6 +25,7 @@ public class ObjectiveTarget : MonoBehaviour
         if( other.gameObject.layer == LayerMask.NameToLayer("PlayerBody") && !objectiveActive){
             objectiveActive = true;
             EventBus<OnObjectiveActivated>.Invoke(new OnObjectiveActivated(requiredType));
+            GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }
