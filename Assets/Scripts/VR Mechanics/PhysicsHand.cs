@@ -82,11 +82,13 @@ public class PhysicsHand : MonoBehaviour
     {
         Vector3 handVelocity = (target.localPosition - previousPosition) / Time.fixedDeltaTime;
         float drag = 1 / handVelocity.magnitude + 0.01f;
-        drag = drag > 1 ? 1 : drag;
-        drag = drag < 0.03f ? 0.03f : drag;
+        drag = drag >= 1 ? 1 : drag;
+        drag = drag <= 0.03f ? 0.03f : drag;
         previousPosition = transform.position;
         return drag;
     }
+
+
 
     private void OnCollisionEnter(Collision collision)
     {
