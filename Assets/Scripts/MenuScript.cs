@@ -7,6 +7,6 @@ public class MenuScript : MonoBehaviour
     }
 
     public void OnRestartButton(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

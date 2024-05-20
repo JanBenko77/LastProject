@@ -38,7 +38,7 @@ public class ClimbPhysics : MonoBehaviour
                 Rigidbody nearRb = nearbyColliders[0].attachedRigidbody;
                 if(fixedJoint == null)
                     fixedJoint = gameObject.AddComponent<FixedJoint>();
-                fixedJoint.autoConfigureConnectedAnchor = false;
+                    fixedJoint.autoConfigureConnectedAnchor = false;
 
                 if (nearRb)
                 {

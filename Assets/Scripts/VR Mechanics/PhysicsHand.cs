@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PhysicsHand : MonoBehaviour
@@ -22,6 +20,8 @@ public class PhysicsHand : MonoBehaviour
 
     private BoxCollider boxCollider;
 
+    public bool isGrabbing = false;
+
     private void Start()
     {
         transform.position = target.position;
@@ -36,7 +36,7 @@ public class PhysicsHand : MonoBehaviour
     {
         PIDMovement();
         PIDRotation();
-        if (isColliding) HookesLaw();
+        if (isColliding || isGrabbing) HookesLaw();
     }
 
     private void PIDMovement()
