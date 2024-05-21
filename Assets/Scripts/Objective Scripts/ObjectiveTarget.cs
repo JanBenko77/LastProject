@@ -1,13 +1,22 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ObjectiveTarget : MonoBehaviour
 {
-    bool objectiveActive;
+    [SerializeField] private List<GameObject> attachmentsToDisable;
+    [SerializeField] private List<GameObject> attachmentsToEnable;
     public ObjectiveType requiredType;
+    bool objectiveActive;
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach(GameObject obj in attachmentsToDisable){
+            obj.SetActive(true);
+        }
+        foreach(GameObject obj in attachmentsToEnable){
+            obj.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -25,6 +34,12 @@ public class ObjectiveTarget : MonoBehaviour
         if( other.gameObject.layer == LayerMask.NameToLayer("PlayerBody") && !objectiveActive){
             objectiveActive = true;
             EventBus<OnObjectiveActivated>.Invoke(new OnObjectiveActivated(requiredType));
+            foreach(GameObject obj in attachmentsToDisable){
+                obj.SetActive(false);
+            }
+            foreach(GameObject obj in attachmentsToEnable){
+            obj.SetActive(true);
+        }
         }
     }
 }
