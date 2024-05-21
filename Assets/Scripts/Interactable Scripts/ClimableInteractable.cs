@@ -13,7 +13,7 @@ public class ClimableInteractable : XRSimpleInteractable
         selectMode = InteractableSelectMode.Multiple;
     }
 
-
+    //Try check here to disable both hands for hookes law
     void OnHoverEnter(HoverEnterEventArgs args){
         Debug.Log("hovering");
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();

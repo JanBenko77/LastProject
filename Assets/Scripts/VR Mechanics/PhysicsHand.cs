@@ -32,7 +32,7 @@ public class PhysicsHand : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         PIDMovement();
         PIDRotation();
