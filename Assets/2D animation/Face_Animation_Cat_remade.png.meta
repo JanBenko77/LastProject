@@ -1,0 +1,752 @@
+fileFormatVersion: 2
+guid: ade69885ff2d2c04aade228974324189
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2365
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0edd5047ecd6b274e94abaae310f95e3
+      internalID: -885317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_1
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 2365
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f32d0e8d837cb4bbeeb43f8a5f4b13
+      internalID: -1281205920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_2
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 2365
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c117718f088864f449cd91f8b4a44197
+      internalID: 421770243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_3
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 2365
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f214769b4c1c042a012347c569d522
+      internalID: -272373817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_4
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 2365
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dcc14232caeee84699442222754df80
+      internalID: 1464008958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1895
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211d029c51ab0134da9a9b7d6ac68fae
+      internalID: -880797472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_6
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1895
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4363e6bd903934248b562c02b102b65e
+      internalID: 524350886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_7
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1895
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85fa18d146744fb4d8a1afae412eb994
+      internalID: -1022732295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_8
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 1895
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86811ce3c6f80974893a18c955f6993e
+      internalID: -1071424375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_9
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 1895
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49d84ee748fcf649a054d4b4934cd9a
+      internalID: -1856680726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1425
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5771d1c7f2fefc4ea648ef3c6fb5f0e
+      internalID: -1662237477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_11
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1425
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e271a6fba573e5241a19f4a91d8cc37f
+      internalID: -1632980920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_12
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1425
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6256a59aaec2214a92c678cb917cb6d
+      internalID: 174041762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_13
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 1425
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f31cbb8ccf5ca4da9602bb247dce83
+      internalID: 1931022533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_14
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 1425
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc23a15fa3a2234fb2857f1e41d4682
+      internalID: 1858416244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 955
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f56f06c845f19d4b802ea7caa73cbb0
+      internalID: -1898644581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_16
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 955
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86abaf2f48480647a97d3fa8131681f
+      internalID: 1690965485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_17
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 955
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83f4bd3d26343c4484549ce36566218
+      internalID: -2057435963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_18
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 955
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf9178c2835c9d48990bd83811635bf
+      internalID: -1015149193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_19
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 955
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d9bdfdd041216e4aa933c8ef460ab0d
+      internalID: -1361149554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 485
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8626d58cb1584994aa18f2f7b928a304
+      internalID: 1541277026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_21
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 485
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3432cecf248201b44a0815333637e952
+      internalID: 76064610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_22
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 485
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7a744054298cb48b9a23f91d9fcb0e
+      internalID: 1348065612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_23
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 485
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4777d6d42992f9944b926b5c5a7e937f
+      internalID: 971439463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_24
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 485
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc0bc43ac204d442a297e95fcfbf2fa
+      internalID: 1369518823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20fc4f05764f8245b0c7c2c2deb3521
+      internalID: -1052003145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_26
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 15
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c1674bd99c7834ca236ecfca00f5c7
+      internalID: -970803249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_27
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 15
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a7fcdef9c58624497d75214a1e015e
+      internalID: -1453674938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Cat_remade_28
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 15
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f54cbdc76c41f4abbc9812b69a940b
+      internalID: -52547980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8e66a9718f21ef6408b33251e8ee6b5c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Face_Animation_Cat_remade_0: -885317
+      Face_Animation_Cat_remade_1: -1281205920
+      Face_Animation_Cat_remade_10: -1662237477
+      Face_Animation_Cat_remade_11: -1632980920
+      Face_Animation_Cat_remade_12: 174041762
+      Face_Animation_Cat_remade_13: 1931022533
+      Face_Animation_Cat_remade_14: 1858416244
+      Face_Animation_Cat_remade_15: -1898644581
+      Face_Animation_Cat_remade_16: 1690965485
+      Face_Animation_Cat_remade_17: -2057435963
+      Face_Animation_Cat_remade_18: -1015149193
+      Face_Animation_Cat_remade_19: -1361149554
+      Face_Animation_Cat_remade_2: 421770243
+      Face_Animation_Cat_remade_20: 1541277026
+      Face_Animation_Cat_remade_21: 76064610
+      Face_Animation_Cat_remade_22: 1348065612
+      Face_Animation_Cat_remade_23: 971439463
+      Face_Animation_Cat_remade_24: 1369518823
+      Face_Animation_Cat_remade_25: -1052003145
+      Face_Animation_Cat_remade_26: -970803249
+      Face_Animation_Cat_remade_27: -1453674938
+      Face_Animation_Cat_remade_28: -52547980
+      Face_Animation_Cat_remade_3: -272373817
+      Face_Animation_Cat_remade_4: 1464008958
+      Face_Animation_Cat_remade_5: -880797472
+      Face_Animation_Cat_remade_6: 524350886
+      Face_Animation_Cat_remade_7: -1022732295
+      Face_Animation_Cat_remade_8: -1071424375
+      Face_Animation_Cat_remade_9: -1856680726
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
