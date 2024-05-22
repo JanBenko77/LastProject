@@ -19,6 +19,7 @@ public class ClimableInteractable : XRSimpleInteractable
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
         interactor.SetHoverMaterial();
     }
+
     void OnHoverExit(HoverExitEventArgs args){
         Debug.Log("Hover exited");
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
@@ -32,7 +33,6 @@ public class ClimableInteractable : XRSimpleInteractable
         hand.isGrabbing = true;
         FixedJoint fixedJoint = interactor.physicsHand.gameObject.AddComponent<FixedJoint>();
         fixedJoint.autoConfigureConnectedAnchor = false;
-        Debug.Log("Interacting");
     }
     void OnGrabExit(SelectExitEventArgs args){
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
@@ -40,8 +40,5 @@ public class ClimableInteractable : XRSimpleInteractable
         PhysicsHand hand = interactor.physicsHand.gameObject.GetComponent<PhysicsHand>();
         hand.isGrabbing = false;
         Destroy(interactor.physicsHand.gameObject.GetComponent<FixedJoint>());
-        Debug.Log("Not Interacting");
-
     }
-
 }
