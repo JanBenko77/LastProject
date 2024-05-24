@@ -11,6 +11,7 @@ public class PhysicsHand : MonoBehaviour
     [SerializeField] private Transform target;
     Rigidbody rb;
 
+    [Header("Hooke's Law")]
     [SerializeField] private float climbForce = 1000f;
     [SerializeField] private float climbDrag = 500f;
     [SerializeField] private Vector3 maxForce = new Vector3(1000f, 1000f, 1000f);
@@ -20,6 +21,7 @@ public class PhysicsHand : MonoBehaviour
 
     private BoxCollider boxCollider;
 
+    [Header("Grabbing")]
     public bool isGrabbing = false;
 
     private void Start()
