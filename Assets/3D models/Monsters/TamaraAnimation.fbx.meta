@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Tamara_mtl
+    second: {fileID: 2100000, guid: 23cab3f210f8e4249bad46f1601094df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: body1
     second: {fileID: 2100000, guid: 0e8f3066ac2dd5046aad63430523aef9, type: 2}
   materials:
