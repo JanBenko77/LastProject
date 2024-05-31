@@ -3,6 +3,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class ClimableInteractable : XRSimpleInteractable
 {
+    private PhysicsHand lastHand;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,16 +30,30 @@ public class ClimableInteractable : XRSimpleInteractable
     void OnGrabEnter(SelectEnterEventArgs args){
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
         interactor.SetGrabMaterial();
-        PhysicsHand hand = interactor.physicsHand.gameObject.GetComponent<PhysicsHand>();
-        hand.isGrabbing = true;
-        FixedJoint fixedJoint = interactor.physicsHand.gameObject.AddComponent<FixedJoint>();
-        fixedJoint.autoConfigureConnectedAnchor = false;
+        if(lastHand != null)
+            DisconectJoint(lastHand);
+        lastHand = interactor.physicsHand.gameObject.GetComponent<PhysicsHand>();
+        ConnectJoint(lastHand);
+        //PhysicsHand.isClimbing = true;
     }
     void OnGrabExit(SelectExitEventArgs args){
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
         interactor.SetDefaultMaterial();
         PhysicsHand hand = interactor.physicsHand.gameObject.GetComponent<PhysicsHand>();
-        hand.isGrabbing = false;
-        Destroy(interactor.physicsHand.gameObject.GetComponent<FixedJoint>());
+        DisconectJoint(hand);
+        if(lastHand == hand){
+           PhysicsHand.isClimbing = false;
+            lastHand = null;
+            }
+    }
+
+    void DisconectJoint(PhysicsHand physicsHand){
+        physicsHand.isGrabbing = false;
+        Destroy(physicsHand.gameObject.GetComponent<FixedJoint>());
+    }
+    void ConnectJoint(PhysicsHand physicsHand){
+        physicsHand.isGrabbing = true;
+        FixedJoint fixedJoint = physicsHand.gameObject.AddComponent<FixedJoint>();
+        fixedJoint.autoConfigureConnectedAnchor = false;
     }
 }
