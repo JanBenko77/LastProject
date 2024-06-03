@@ -2,19 +2,23 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 public class PhysicsHandInteractor : XRDirectInteractor
 {
-    public Transform physicsHand;
+    public PhysicsHand physicsHand;
     [SerializeField] private RenderSettings renderSettings;
-    
+    void Start(){
+        physicsHand.interactor = this;
+    }
     public void SetGrabMaterial(){
         physicsHand.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = renderSettings.grabMaterial;
     }
 
     public void SetHoverMaterial(){
-        physicsHand.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = renderSettings.hoverMaterial;
+        if(!physicsHand.isGrabbing)
+            physicsHand.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = renderSettings.hoverMaterial;
     }
 
     public void SetDefaultMaterial(){
-        physicsHand.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = renderSettings.defaultMaterial;
+        if(!physicsHand.isGrabbing)
+            physicsHand.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = renderSettings.defaultMaterial;
     }
 }
 

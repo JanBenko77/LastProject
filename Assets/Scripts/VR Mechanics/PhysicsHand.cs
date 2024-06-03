@@ -23,8 +23,8 @@ public class PhysicsHand : MonoBehaviour
 
     [Header("Grabbing")]
     public bool isGrabbing = false;
-
-    public static bool isClimbing = false;
+    public PhysicsHandInteractor interactor;
+   //public static bool isClimbing = false;
     private void Start()
     {
         transform.position = target.position;
@@ -39,7 +39,7 @@ public class PhysicsHand : MonoBehaviour
     {
         PIDMovement();
         PIDRotation();
-        if ((isColliding && !isClimbing) || isGrabbing) HookesLaw();
+        if (isColliding || isGrabbing) HookesLaw();
     }
 
     private void PIDMovement()
