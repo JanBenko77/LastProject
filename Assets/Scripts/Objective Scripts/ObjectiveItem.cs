@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectiveItem : MonoBehaviour
 {
     [SerializeField] private ObjectiveType _objectiveType;
-    public ObjectiveType ObjectiveType{ get{ return _objectiveType; } }
+    public ObjectiveType ObjectiveType{ get{ return _objectiveType; } set { _objectiveType = value; } }
     // Start is called before the first frame update
     void Start(){
         EventBus<OnObjectiveComplete>.OnEvent += OnItemDelivered;
