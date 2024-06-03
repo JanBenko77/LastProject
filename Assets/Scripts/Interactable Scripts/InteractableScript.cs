@@ -19,12 +19,6 @@ public class InteractableScript : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void ChangeLayer(string layer){
         gameObject.SetLayerRecursively(LayerMask.NameToLayer(layer));
     }

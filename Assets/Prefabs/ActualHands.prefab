@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 858723276056849204}
   - component: {fileID: 7388727697057916207}
   - component: {fileID: 2373192674427169483}
+  - component: {fileID: 6709617735444148689}
   m_Layer: 9
   m_Name: ActualHands
   m_TagString: Untagged
@@ -97,6 +98,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XROrigin: {fileID: 858723276056849204}
+--- !u!114 &6709617735444148689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115847557217372388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59097d904f1f6049a042a47582388e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3078291364893798134
 GameObject:
   m_ObjectHideFlags: 0

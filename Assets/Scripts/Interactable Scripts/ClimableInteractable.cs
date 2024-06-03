@@ -29,30 +29,27 @@ public class ClimableInteractable : XRSimpleInteractable
 
     void OnGrabEnter(SelectEnterEventArgs args){
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
-        interactor.SetGrabMaterial();
         if(lastHand != null)
             DisconectJoint(lastHand);
-        lastHand = interactor.physicsHand.gameObject.GetComponent<PhysicsHand>();
+        lastHand = interactor.physicsHand;
         ConnectJoint(lastHand);
-        //PhysicsHand.isClimbing = true;
     }
     void OnGrabExit(SelectExitEventArgs args){
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
-        interactor.SetDefaultMaterial();
-        PhysicsHand hand = interactor.physicsHand.gameObject.GetComponent<PhysicsHand>();
+        PhysicsHand hand = interactor.physicsHand;
         DisconectJoint(hand);
-        if(lastHand == hand){
-           PhysicsHand.isClimbing = false;
+        if(lastHand == hand)
             lastHand = null;
-            }
     }
 
     void DisconectJoint(PhysicsHand physicsHand){
         physicsHand.isGrabbing = false;
+        physicsHand.interactor.SetHoverMaterial();
         Destroy(physicsHand.gameObject.GetComponent<FixedJoint>());
     }
     void ConnectJoint(PhysicsHand physicsHand){
         physicsHand.isGrabbing = true;
+        physicsHand.interactor.SetGrabMaterial();
         FixedJoint fixedJoint = physicsHand.gameObject.AddComponent<FixedJoint>();
         fixedJoint.autoConfigureConnectedAnchor = false;
     }
