@@ -9,8 +9,8 @@ using Unity.VisualScripting;
 
 public class ObjectiveManagerWindow : EditorWindow
 {
-
     [MenuItem("Tools/Objective Editor")]
+
     public static void Open()
     {
         ObjectiveManagerWindow window = GetWindow<ObjectiveManagerWindow>();
@@ -30,14 +30,7 @@ public class ObjectiveManagerWindow : EditorWindow
     {
         GUILayout.Label("Objective Manager", EditorStyles.boldLabel);
 
-        if (Selection.activeTransform != null)
-        {
-            target = Selection.activeTransform.gameObject;
-        }
-        else
-        {
-            target = null;
-        }
+        target = Selection.activeTransform != null ? Selection.activeTransform.gameObject : null;
 
 
         if (target != null)
@@ -57,6 +50,14 @@ public class ObjectiveManagerWindow : EditorWindow
                     CreateNewObjective();
                 }
             }
+            if (target.GetComponent<ObjectiveItem>() != null)
+            {
+                EditorGUILayout.LabelField("Selected Objective Item: ", target.name);
+                EditorGUILayout.Space();
+                EditorGUILayout.BeginVertical();
+                DrawUIItem();
+                EditorGUILayout.EndVertical();
+            }
         }
         else
         {
@@ -67,9 +68,10 @@ public class ObjectiveManagerWindow : EditorWindow
         }
     }
 
+
     private void CreateNewObjective()
     {
-        GameObject newObject = new GameObject("Objective");
+        GameObject newObject = new("Objective");
         newObject.AddComponent<ObjectiveTarget>();
         Selection.activeObject = newObject;
         Undo.RegisterCreatedObjectUndo(newObject, "Create New Objective");
@@ -77,9 +79,26 @@ public class ObjectiveManagerWindow : EditorWindow
 
     private void CreateNewObjectiveItem()
     {
-        var go = PrefabUtility.InstantiatePrefab(itemPrefab);
+        Object go = PrefabUtility.InstantiatePrefab(itemPrefab);
+        GameObject goGo = go as GameObject;
+        goGo.transform.position = target.transform.position;
         go.GetComponent<ObjectiveItem>().ObjectiveType = target.GetComponent<ObjectiveTarget>().requiredType;
         Undo.RegisterCreatedObjectUndo(itemPrefab, "Create New Objective Item");
+    }
+
+    private void DrawUIItem()
+    {
+        EditorGUILayout.LabelField("Objective Item Settings", EditorStyles.boldLabel);
+        EditorGUILayout.ObjectField("Objective Item Script", target.GetComponent<ObjectiveItem>(), typeof(ObjectiveItem), true);
+        Editor editorTarget = Editor.CreateEditor(target.GetComponent<ObjectiveItem>());
+        editorTarget.OnInspectorGUI();
+
+        EditorGUILayout.Space();
+
+        if (GUILayout.Button("Delete Objective Item"))
+        {
+            DestroyImmediate(target);
+        }
     }
 
     private void DrawUI()
