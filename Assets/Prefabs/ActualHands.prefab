@@ -653,7 +653,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.1
-  m_Height: 1
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!114 &8574187565586712249
@@ -1987,7 +1987,7 @@ MonoBehaviour:
   climbDrag: 500
   maxForce: {x: 750, y: 750, z: 750}
   isGrabbing: 0
-  interactor: {fileID: 0}
+  interactor: {fileID: 2362716564941699331}
 --- !u!65 &3276802415510099432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3027,7 +3027,7 @@ MonoBehaviour:
   climbDrag: 500
   maxForce: {x: 750, y: 750, z: 750}
   isGrabbing: 0
-  interactor: {fileID: 0}
+  interactor: {fileID: 5035612324143718300}
 --- !u!65 &6852308236517380946
 BoxCollider:
   m_ObjectHideFlags: 0
