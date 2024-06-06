@@ -3,7 +3,12 @@ guid: 2c64bdcc130239e4584bb822d125c6a8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: smallCristal
+    second: {fileID: 2100000, guid: 3152a51b078c7804189e0b398ce41c72, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
