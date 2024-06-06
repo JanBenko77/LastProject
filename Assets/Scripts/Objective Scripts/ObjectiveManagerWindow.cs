@@ -71,17 +71,27 @@ public class ObjectiveManagerWindow : EditorWindow
 
     private void CreateNewObjective()
     {
-        GameObject newObject = new("Objective");
-        newObject.AddComponent<ObjectiveTarget>();
-        Selection.activeObject = newObject;
-        Undo.RegisterCreatedObjectUndo(newObject, "Create New Objective");
+        if (target == null)
+        {
+            GameObject newObject = new("Objective");
+            newObject.AddComponent<ObjectiveTarget>();
+            Selection.activeObject = newObject;
+            Undo.RegisterCreatedObjectUndo(newObject, "Create New Objective");
+        }
+        else
+        {
+            GameObject newObject = new("Objective");
+            newObject.transform.parent = target.transform;
+            newObject.AddComponent<ObjectiveTarget>();
+            Selection.activeObject = newObject;
+            Undo.RegisterCreatedObjectUndo(newObject, "Create New Objective");
+        }
     }
 
     private void CreateNewObjectiveItem()
     {
-        Object go = PrefabUtility.InstantiatePrefab(itemPrefab);
-        GameObject goGo = go as GameObject;
-        goGo.transform.position = target.transform.position;
+        GameObject go = (GameObject)PrefabUtility.InstantiatePrefab(itemPrefab);
+        go.transform.position = target.transform.position;
         go.GetComponent<ObjectiveItem>().ObjectiveType = target.GetComponent<ObjectiveTarget>().requiredType;
         Undo.RegisterCreatedObjectUndo(itemPrefab, "Create New Objective Item");
     }
