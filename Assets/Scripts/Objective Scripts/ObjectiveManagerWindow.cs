@@ -43,20 +43,20 @@ public class ObjectiveManagerWindow : EditorWindow
                 DrawUI();
                 EditorGUILayout.EndVertical();
             }
-            else
-            {
-                if (GUILayout.Button("Create New Objective"))
-                {
-                    CreateNewObjective();
-                }
-            }
-            if (target.GetComponent<ObjectiveItem>() != null)
+            else if (target.GetComponent<ObjectiveItem>() != null)
             {
                 EditorGUILayout.LabelField("Selected Objective Item: ", target.name);
                 EditorGUILayout.Space();
                 EditorGUILayout.BeginVertical();
                 DrawUIItem();
                 EditorGUILayout.EndVertical();
+            }
+            else
+            {
+                if (GUILayout.Button("Create New Objective"))
+                {
+                    CreateNewObjective();
+                }
             }
         }
         else
