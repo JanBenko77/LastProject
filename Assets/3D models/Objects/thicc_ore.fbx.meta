@@ -3,7 +3,12 @@ guid: 9d858f087d0984e46b2cb96714841fc9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: thicc_ore
+    second: {fileID: 2100000, guid: 62c5fae3983e807448635f5b884544ee, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

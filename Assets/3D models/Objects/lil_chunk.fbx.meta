@@ -3,7 +3,12 @@ guid: 398df4bf9e67ecf4ab211b6fc63b914f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: small_ore
+    second: {fileID: 2100000, guid: 27cf4fe7385dee542b958a93b7db31db, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
