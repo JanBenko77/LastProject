@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEditor.UIElements;
 using Unity.VisualScripting;
+using UnityEngine.Windows;
 #if UNITY_EDITOR
 
 public class ObjectiveManagerWindow : EditorWindow
@@ -90,10 +91,18 @@ public class ObjectiveManagerWindow : EditorWindow
 
     private void CreateNewObjectiveItem()
     {
-        GameObject go = (GameObject)PrefabUtility.InstantiatePrefab(itemPrefab);
-        go.transform.position = target.transform.position;
-        go.GetComponent<ObjectiveItem>().ObjectiveType = target.GetComponent<ObjectiveTarget>().requiredType;
-        Undo.RegisterCreatedObjectUndo(itemPrefab, "Create New Objective Item");
+        GameObject gameObject = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Objectives/ObjectiveItemPrefab.prefab");
+        if (gameObject != null)
+        {
+            GameObject go = (GameObject)PrefabUtility.InstantiatePrefab(gameObject);
+            go.transform.position = target.transform.position;
+            go.GetComponent<ObjectiveItem>().ObjectiveType = target.GetComponent<ObjectiveTarget>().requiredType;
+            Undo.RegisterCreatedObjectUndo(go, "Create New Objective Item");
+        }
+        else
+        {
+            Debug.LogError("Prefab not found");
+        }
     }
 
     private void DrawUIItem()
@@ -107,7 +116,7 @@ public class ObjectiveManagerWindow : EditorWindow
 
         if (GUILayout.Button("Delete Objective Item"))
         {
-            DestroyImmediate(target);
+            Undo.DestroyObjectImmediate(target);
         }
     }
 
@@ -140,7 +149,7 @@ public class ObjectiveManagerWindow : EditorWindow
 
         if (GUILayout.Button("Delete Objective"))
         {
-            DestroyImmediate(target);
+            Undo.DestroyObjectImmediate(target);
         }
     }
 }
