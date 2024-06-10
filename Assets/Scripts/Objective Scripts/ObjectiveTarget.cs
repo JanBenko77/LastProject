@@ -7,9 +7,10 @@ public class ObjectiveTarget : MonoBehaviour
     [SerializeField] private List<GameObject> attachmentsToDisable;
     [SerializeField] private List<GameObject> attachmentsToEnable;
     public ObjectiveType requiredType;
-    bool objectiveActive;
+    private bool objectiveActive;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         foreach (GameObject obj in attachmentsToDisable)
         {
@@ -21,22 +22,16 @@ public class ObjectiveTarget : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out ObjectiveItem item) && objectiveActive)
+        if (objectiveActive && other.TryGetComponent(out ObjectiveItem item))
         {
             if (item.ObjectiveType == requiredType)
             {
                 EventBus<OnObjectiveComplete>.Invoke(new OnObjectiveComplete(item));
             }
         }
-        if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBody") && !objectiveActive)
+        if (!objectiveActive && other.gameObject.layer == LayerMask.NameToLayer("PlayerBody"))
         {
             objectiveActive = true;
             EventBus<OnObjectiveActivated>.Invoke(new OnObjectiveActivated(requiredType));
@@ -55,5 +50,4 @@ public class ObjectiveTarget : MonoBehaviour
     {
         return FindObjectsOfType<ObjectiveItem>().FirstOrDefault(item => item.ObjectiveType == requiredType);
     }
-
 }

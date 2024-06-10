@@ -84,16 +84,7 @@ public class PlayerController : MonoBehaviour
         Vector3 origin = transform.position;
         Vector3 direction = new Vector3(0f, -1f, 0f);
         float maxDistance = 1.3f;
-        RaycastHit hitInfo;
-
-        if (Physics.Raycast(origin, direction, out hitInfo, maxDistance))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return Physics.Raycast(origin, direction, out _, maxDistance);
     }
 
     private void MovePlayer()

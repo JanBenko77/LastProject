@@ -2,8 +2,11 @@ using UnityEngine;
 
 public enum ObjectiveType{
     None = 0,
-    Ball = 1,
-    Book = 2
+    Battery = 1,
+    Book = 2,
+    Makeup = 3,
+    Flower = 4,
+    Spaghetti = 5
 }
 public class ObjectiveManager : MonoBehaviour
 {

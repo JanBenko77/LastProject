@@ -5,12 +5,13 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEditor.UIElements;
 using Unity.VisualScripting;
+using UnityEngine.Windows;
 #if UNITY_EDITOR
 
 public class ObjectiveManagerWindow : EditorWindow
 {
-
     [MenuItem("Tools/Objective Editor")]
+
     public static void Open()
     {
         ObjectiveManagerWindow window = GetWindow<ObjectiveManagerWindow>();
@@ -30,14 +31,7 @@ public class ObjectiveManagerWindow : EditorWindow
     {
         GUILayout.Label("Objective Manager", EditorStyles.boldLabel);
 
-        if (Selection.activeTransform != null)
-        {
-            target = Selection.activeTransform.gameObject;
-        }
-        else
-        {
-            target = null;
-        }
+        target = Selection.activeTransform != null ? Selection.activeTransform.gameObject : null;
 
 
         if (target != null)
@@ -48,6 +42,14 @@ public class ObjectiveManagerWindow : EditorWindow
                 EditorGUILayout.Space();
                 EditorGUILayout.BeginVertical();
                 DrawUI();
+                EditorGUILayout.EndVertical();
+            }
+            else if (target.GetComponent<ObjectiveItem>() != null)
+            {
+                EditorGUILayout.LabelField("Selected Objective Item: ", target.name);
+                EditorGUILayout.Space();
+                EditorGUILayout.BeginVertical();
+                DrawUIItem();
                 EditorGUILayout.EndVertical();
             }
             else
@@ -67,19 +69,55 @@ public class ObjectiveManagerWindow : EditorWindow
         }
     }
 
+
     private void CreateNewObjective()
     {
-        GameObject newObject = new GameObject("Objective");
-        newObject.AddComponent<ObjectiveTarget>();
-        Selection.activeObject = newObject;
-        Undo.RegisterCreatedObjectUndo(newObject, "Create New Objective");
+        if (target == null)
+        {
+            GameObject newObject = new("Objective");
+            newObject.AddComponent<ObjectiveTarget>();
+            Selection.activeObject = newObject;
+            Undo.RegisterCreatedObjectUndo(newObject, "Create New Objective");
+        }
+        else
+        {
+            GameObject newObject = new("Objective");
+            newObject.transform.parent = target.transform;
+            newObject.AddComponent<ObjectiveTarget>();
+            Selection.activeObject = newObject;
+            Undo.RegisterCreatedObjectUndo(newObject, "Create New Objective");
+        }
     }
 
     private void CreateNewObjectiveItem()
     {
-        var go = PrefabUtility.InstantiatePrefab(itemPrefab);
-        go.GetComponent<ObjectiveItem>().ObjectiveType = target.GetComponent<ObjectiveTarget>().requiredType;
-        Undo.RegisterCreatedObjectUndo(itemPrefab, "Create New Objective Item");
+        GameObject gameObject = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Objectives/ObjectiveItemPrefab.prefab");
+        if (gameObject != null)
+        {
+            GameObject go = (GameObject)PrefabUtility.InstantiatePrefab(gameObject);
+            go.transform.position = target.transform.position;
+            go.GetComponent<ObjectiveItem>().ObjectiveType = target.GetComponent<ObjectiveTarget>().requiredType;
+            Undo.RegisterCreatedObjectUndo(go, "Create New Objective Item");
+        }
+        else
+        {
+            Debug.LogError("Prefab not found");
+        }
+    }
+
+    private void DrawUIItem()
+    {
+        EditorGUILayout.LabelField("Objective Item Settings", EditorStyles.boldLabel);
+        EditorGUILayout.ObjectField("Objective Item Script", target.GetComponent<ObjectiveItem>(), typeof(ObjectiveItem), true);
+        Editor editorTarget = Editor.CreateEditor(target.GetComponent<ObjectiveItem>());
+        editorTarget.OnInspectorGUI();
+
+        EditorGUILayout.Space();
+
+        if (GUILayout.Button("Delete Objective Item"))
+        {
+            Undo.DestroyObjectImmediate(target);
+        }
     }
 
     private void DrawUI()
@@ -111,7 +149,7 @@ public class ObjectiveManagerWindow : EditorWindow
 
         if (GUILayout.Button("Delete Objective"))
         {
-            DestroyImmediate(target);
+            Undo.DestroyObjectImmediate(target);
         }
     }
 }
