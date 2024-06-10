@@ -99,6 +99,16 @@ public class PhysicsHand : MonoBehaviour
     }
 
 
+    public void DestroyJoint(){
+        isGrabbing = false;
+        interactor.SetHoverMaterial();
+        Destroy(GetComponent<FixedJoint>());
+    }
+    public void CreateJoint(){
+        isGrabbing = true;
+        interactor.SetGrabMaterial();
+        gameObject.AddComponent<FixedJoint>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

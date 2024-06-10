@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -30,27 +31,15 @@ public class ClimableInteractable : XRSimpleInteractable
     void OnGrabEnter(SelectEnterEventArgs args){
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
         if(lastHand != null)
-            DisconectJoint(lastHand);
+        lastHand.DestroyJoint();
         lastHand = interactor.physicsHand;
-        ConnectJoint(lastHand);
+        lastHand.CreateJoint();
     }
     void OnGrabExit(SelectExitEventArgs args){
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
         PhysicsHand hand = interactor.physicsHand;
-        DisconectJoint(hand);
+        hand.DestroyJoint();
         if(lastHand == hand)
             lastHand = null;
-    }
-
-    void DisconectJoint(PhysicsHand physicsHand){
-        physicsHand.isGrabbing = false;
-        physicsHand.interactor.SetHoverMaterial();
-        Destroy(physicsHand.gameObject.GetComponent<FixedJoint>());
-    }
-    void ConnectJoint(PhysicsHand physicsHand){
-        physicsHand.isGrabbing = true;
-        physicsHand.interactor.SetGrabMaterial();
-        FixedJoint fixedJoint = physicsHand.gameObject.AddComponent<FixedJoint>();
-        fixedJoint.autoConfigureConnectedAnchor = false;
     }
 }
