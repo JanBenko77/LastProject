@@ -110,6 +110,13 @@ public class PhysicsHand : MonoBehaviour
         gameObject.AddComponent<FixedJoint>();
     }
 
+        public void CreateJoint(Rigidbody body){
+        isGrabbing = true;
+        interactor.SetGrabMaterial();
+        FixedJoint joint = gameObject.AddComponent<FixedJoint>();
+        joint.connectedBody = body;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         isColliding = true;
