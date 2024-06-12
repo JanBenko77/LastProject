@@ -34,7 +34,7 @@ public class ObjectiveManagerWindow : EditorWindow
 
         if (target != null)
         {
-            if (target.GetComponent<ObjectiveTarget>() != null)
+            if (target.GetComponentInChildren<ObjectiveTarget>() != null)
             {
                 EditorGUILayout.LabelField("Selected Objective: ", target.name);
                 EditorGUILayout.Space();
@@ -42,7 +42,7 @@ public class ObjectiveManagerWindow : EditorWindow
                 DrawUI();
                 EditorGUILayout.EndVertical();
             }
-            else if (target.GetComponent<ObjectiveItem>() != null)
+            else if (target.GetComponentInChildren<ObjectiveItem>() != null)
             {
                 EditorGUILayout.LabelField("Selected Objective Item: ", target.name);
                 EditorGUILayout.Space();
@@ -70,20 +70,21 @@ public class ObjectiveManagerWindow : EditorWindow
 
     private void CreateNewObjective()
     {
-        if (target == null)
+        GameObject newObject = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Objectives/ObjectiveTargetPrefab.prefab");
+        if (newObject != null)
         {
-            GameObject newObject = new("Objective");
-            newObject.AddComponent<ObjectiveTarget>();
-            Selection.activeObject = newObject;
-            Undo.RegisterCreatedObjectUndo(newObject, "Create New Objective");
+            GameObject go = (GameObject)PrefabUtility.InstantiatePrefab(newObject);
+            go.GetComponentInChildren<ObjectiveTarget>().requiredType = ObjectiveType.None;
+            Selection.activeObject = go;
+            if (target != null)
+            {
+                go.transform.parent = target.transform;
+            }
+            Undo.RegisterCreatedObjectUndo(go, "Create New Objective");
         }
         else
         {
-            GameObject newObject = new("Objective");
-            newObject.transform.parent = target.transform;
-            newObject.AddComponent<ObjectiveTarget>();
-            Selection.activeObject = newObject;
-            Undo.RegisterCreatedObjectUndo(newObject, "Create New Objective");
+            Debug.LogError("Prefab not found");
         }
     }
 
@@ -94,7 +95,7 @@ public class ObjectiveManagerWindow : EditorWindow
         {
             GameObject go = (GameObject)PrefabUtility.InstantiatePrefab(gameObject);
             go.transform.position = target.transform.position;
-            go.GetComponent<ObjectiveItem>().ObjectiveType = target.GetComponent<ObjectiveTarget>().requiredType;
+            go.GetComponentInChildren<ObjectiveItem>().ObjectiveType = target.GetComponentInChildren<ObjectiveTarget>().requiredType;
             Undo.RegisterCreatedObjectUndo(go, "Create New Objective Item");
         }
         else
@@ -106,8 +107,8 @@ public class ObjectiveManagerWindow : EditorWindow
     private void DrawUIItem()
     {
         EditorGUILayout.LabelField("Objective Item Settings", EditorStyles.boldLabel);
-        EditorGUILayout.ObjectField("Objective Item Script", target.GetComponent<ObjectiveItem>(), typeof(ObjectiveItem), true);
-        Editor editorTarget = Editor.CreateEditor(target.GetComponent<ObjectiveItem>());
+        EditorGUILayout.ObjectField("Objective Item Script", target.GetComponentInChildren<ObjectiveItem>(), typeof(ObjectiveItem), true);
+        Editor editorTarget = Editor.CreateEditor(target.GetComponentInChildren<ObjectiveItem>());
         editorTarget.OnInspectorGUI();
 
         EditorGUILayout.Space();
@@ -121,17 +122,17 @@ public class ObjectiveManagerWindow : EditorWindow
     private void DrawUI()
     {
         EditorGUILayout.LabelField("Objective Settings", EditorStyles.boldLabel);
-        EditorGUILayout.ObjectField("Objective Script", target.GetComponent<ObjectiveTarget>(), typeof(ObjectiveTarget), true);
-        Editor editorTarget = Editor.CreateEditor(target.GetComponent<ObjectiveTarget>());
+        EditorGUILayout.ObjectField("Objective Script", target.GetComponentInChildren<ObjectiveTarget>(), typeof(ObjectiveTarget), true);
+        Editor editorTarget = Editor.CreateEditor(target.GetComponentInChildren<ObjectiveTarget>());
         editorTarget.OnInspectorGUI();
 
         EditorGUILayout.Space();
 
-        if (target.GetComponent<ObjectiveTarget>().FindObjectiveItemOfSameType() != null)
+        if (target.GetComponentInChildren<ObjectiveTarget>().FindObjectiveItemOfSameType() != null)
         {
             EditorGUILayout.LabelField("Objective Item", EditorStyles.boldLabel);
-            EditorGUILayout.ObjectField("Objective Item Script", target.GetComponent<ObjectiveTarget>().FindObjectiveItemOfSameType(), typeof(ObjectiveItem), true);
-            Editor editorItem = Editor.CreateEditor(target.GetComponent<ObjectiveTarget>().FindObjectiveItemOfSameType());
+            EditorGUILayout.ObjectField("Objective Item Script", target.GetComponentInChildren<ObjectiveTarget>().FindObjectiveItemOfSameType(), typeof(ObjectiveItem), true);
+            Editor editorItem = Editor.CreateEditor(target.GetComponentInChildren<ObjectiveTarget>().FindObjectiveItemOfSameType());
             editorItem.OnInspectorGUI();
         }
         else
