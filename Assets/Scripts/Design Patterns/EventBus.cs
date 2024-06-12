@@ -17,8 +17,9 @@ public class OnObjectiveComplete : Event{
 }
 
 public class OnObjectiveActivated : Event{
-        public ObjectiveType type{get; private set;}
+    public ObjectiveType type{get; private set;}
     public OnObjectiveActivated(ObjectiveType pType){
         type = pType;
     }
 }
+
