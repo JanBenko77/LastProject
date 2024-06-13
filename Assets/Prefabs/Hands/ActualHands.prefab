@@ -411,7 +411,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 2147483651
   m_AttachTransform: {fileID: 7197738337796005711}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -986,7 +986,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 2147483651
   m_AttachTransform: {fileID: 6602631005795287576}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -1473,7 +1473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01f3ebb8bf06a741a181a9a335e29c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.8
+  radius: 0.9
 --- !u!1 &8584991929007362319
 GameObject:
   m_ObjectHideFlags: 0
@@ -2054,7 +2054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01f3ebb8bf06a741a181a9a335e29c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.4
+  radius: 0.5
 --- !u!4 &6301869253761398681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
@@ -2637,6 +2637,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 9092721713278112543, guid: 27fae0f8684d7fe4ab52941f58688f44,
+        type: 3}
+      propertyPath: m_RaycastMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 9181609426247133359, guid: 27fae0f8684d7fe4ab52941f58688f44,
         type: 3}
       propertyPath: m_IsActive
@@ -3097,7 +3102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01f3ebb8bf06a741a181a9a335e29c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.4
+  radius: 0.5
 --- !u!1001 &7739117042704546345
 PrefabInstance:
   m_ObjectHideFlags: 0
