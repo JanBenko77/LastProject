@@ -4,7 +4,8 @@ public class PhysicsHandInteractor : XRDirectInteractor
 {
     public PhysicsHand physicsHand;
     [SerializeField] private RenderSettings renderSettings;
-    void Start(){
+    private void Start(){
+        base.Start();
         physicsHand.interactor = this;
     }
     public void SetGrabMaterial(){
