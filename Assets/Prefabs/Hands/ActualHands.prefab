@@ -1078,6 +1078,7 @@ GameObject:
   - component: {fileID: 2558388225570496042}
   - component: {fileID: 7113455698549010300}
   - component: {fileID: 7309867219853162053}
+  - component: {fileID: 1869141698034832136}
   m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1512,6 +1513,19 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1869141698034832136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490339894939609599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01f3ebb8bf06a741a181a9a335e29c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.8
 --- !u!1 &8584991929007362319
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,6 +2033,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7891387601516110344}
+    - targetCorrespondingSourceObject: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3859128471009257795}
   m_SourcePrefab: {fileID: 100100000, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
 --- !u!1 &6301869253760969721 stripped
 GameObject:
@@ -2076,6 +2094,19 @@ MonoBehaviour:
   maxForce: {x: 750, y: 750, z: 750}
   isGrabbing: 0
   interactor: {fileID: 2362716564941699331}
+--- !u!114 &3859128471009257795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6301869253760969721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01f3ebb8bf06a741a181a9a335e29c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.4
 --- !u!4 &6301869253761398681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
@@ -3039,6 +3070,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3268401754662685133}
+    - targetCorrespondingSourceObject: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1521561463110875279}
   m_SourcePrefab: {fileID: 100100000, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
 --- !u!4 &4433146831578005606 stripped
 Transform:
@@ -3102,6 +3137,19 @@ MonoBehaviour:
   maxForce: {x: 750, y: 750, z: 750}
   isGrabbing: 0
   interactor: {fileID: 5035612324143718300}
+--- !u!114 &1521561463110875279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4433146831578110982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01f3ebb8bf06a741a181a9a335e29c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.4
 --- !u!1001 &7739117042704546345
 PrefabInstance:
   m_ObjectHideFlags: 0

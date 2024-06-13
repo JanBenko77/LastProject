@@ -8,11 +8,10 @@ public class FPSCounter : MonoBehaviour
     {
         if(_fpsText == null)
             _fpsText = GetComponent<TextMeshProUGUI>();
-            InvokeRepeating("GetFPS",1,1);
     }
 
     // Update is called once per frames
-    void GetFPS()
+    void Update()
     {
         _fpsText.text ="FPS: " + (1f/Time.unscaledDeltaTime).ToString();
     }

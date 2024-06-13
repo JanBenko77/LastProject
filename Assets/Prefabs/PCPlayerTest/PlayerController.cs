@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
             pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
 
             transform.localEulerAngles = new Vector3(0, yaw, 0);
-            cam.transform.localEulerAngles = new Vector3(pitch, 0, 0);
+           if(cam != null) cam.transform.localEulerAngles = new Vector3(pitch, 0, 0);
         }
     }
 
