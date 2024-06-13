@@ -32,8 +32,8 @@ public class ClimableInteractable : XRSimpleInteractable
 
     void OnGrabEnter(SelectEnterEventArgs args){
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
-        if(lastHand != null)
-        lastHand.DestroyJoint();
+        //if(lastHand != null)
+        //lastHand.DestroyJoint();
         lastHand = interactor.physicsHand;
         //if(rb != null)
             //lastHand.CreateJoint(rb);

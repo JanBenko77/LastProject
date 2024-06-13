@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PhysicsHand : MonoBehaviour
@@ -16,7 +17,7 @@ public class PhysicsHand : MonoBehaviour
     [SerializeField] private float climbDrag = 500f;
     [SerializeField] private Vector3 maxForce = new Vector3(1000f, 1000f, 1000f);
     private Vector3 previousPosition;
-
+    private Vector3 accumilatedForce;
     private bool isColliding = false;
 
     private BoxCollider boxCollider;
@@ -39,7 +40,8 @@ public class PhysicsHand : MonoBehaviour
     {
         PIDMovement();
         PIDRotation();
-        if (isColliding || isGrabbing) HookesLaw();
+        if (isColliding && !isGrabbing) HookesLaw();
+        else if(isGrabbing) ClimbLaw();
     }
 
     private void PIDMovement()
@@ -53,7 +55,8 @@ public class PhysicsHand : MonoBehaviour
         Mathf.Clamp(force.x, -maxForce.x, maxForce.x);
         Mathf.Clamp(force.y, -maxForce.y, maxForce.y);
         Mathf.Clamp(force.z, -maxForce.z, maxForce.z);
-        rb.AddForce(force, ForceMode.Acceleration);
+        accumilatedForce = force;
+        rb.AddForce(accumilatedForce, ForceMode.Acceleration);
     }
 
     private void PIDRotation()
@@ -88,6 +91,10 @@ public class PhysicsHand : MonoBehaviour
         playerRb.AddForce(drag * -playerRb.velocity * climbDrag, ForceMode.Acceleration);
     }
 
+    private void ClimbLaw()
+    {
+        playerRb.AddForce(-accumilatedForce, ForceMode.Acceleration);
+    }
     private float GetDrag()
     {
         Vector3 handVelocity = (target.localPosition - previousPosition) / Time.fixedDeltaTime;
@@ -110,7 +117,7 @@ public class PhysicsHand : MonoBehaviour
         gameObject.AddComponent<FixedJoint>();
     }
 
-        public void CreateJoint(Rigidbody body){
+    public void CreateJoint(Rigidbody body){
         isGrabbing = true;
         interactor.SetGrabMaterial();
         FixedJoint joint = gameObject.AddComponent<FixedJoint>();
