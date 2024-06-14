@@ -3,7 +3,12 @@ guid: 3f1b233784e0ba24aba73d97f3e2ba9d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mountain
+    second: {fileID: 2100000, guid: d162bbbe058ebbb469fbe4489235d42c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
