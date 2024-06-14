@@ -29,8 +29,16 @@ public class FadeInOut : MonoBehaviour
             alpha = curve.Evaluate(time);
             texture.SetPixel(0, 0, new Color(fadeColor.r, fadeColor.g, fadeColor.b, alpha));
             texture.Apply();
-            if (alpha <= 0f || alpha >= 1f) direction = 0;
-            
+            if (alpha <= 0f)
+            {
+                direction = 0;
+            }
+            else if (alpha >= 1f)
+            {
+                direction = 0;
+                EventBus<OnAnimationComplete>.Invoke(new OnAnimationComplete());
+                StartCoroutine(FadeCoroutine());
+            }
         }
     }
 
@@ -46,10 +54,10 @@ public class FadeInOut : MonoBehaviour
 
     private void FadeOut(OnTeleporterEntered pEvent)
     {
-        StartCoroutine(FadeOutCoroutine());
+        StartCoroutine(FadeCoroutine());
     }
 
-    private IEnumerator FadeOutCoroutine()
+    private IEnumerator FadeCoroutine()
     {
         if (direction == 0)
         {
@@ -66,7 +74,6 @@ public class FadeInOut : MonoBehaviour
                 direction = -1;
             }
         }
-        EventBus<OnAnimationComplete>.Invoke(new OnAnimationComplete());
         yield return null;
     }
 }
