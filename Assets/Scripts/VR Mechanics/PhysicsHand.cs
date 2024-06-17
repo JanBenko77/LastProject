@@ -40,8 +40,8 @@ public class PhysicsHand : MonoBehaviour
     {
         PIDMovement();
         PIDRotation();
-        if (isColliding && !isGrabbing) HookesLaw();
-        else if(isGrabbing) ClimbLaw();
+        if(isGrabbing) ClimbLaw();
+        else if (isColliding)  HookesLaw();
     }
 
     private void PIDMovement()
