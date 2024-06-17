@@ -1,0 +1,752 @@
+fileFormatVersion: 2
+guid: e17a228727cc57f4e8b5b822a410081c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2365
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c6cb31c95aaf34cb10862034b58c60
+      internalID: -111245107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_1
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 2365
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9fc7bfaea7a18a49869588206136d60
+      internalID: 1206773591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_2
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 2365
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 649cdf615a7d6b5458af1cedee863ffa
+      internalID: -2108924980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_3
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 2365
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b7d7ad7f7a7aa547ab168d3384c7132
+      internalID: 1989872303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_4
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 2365
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36bc63a80279f0a45ad02ac2907544cb
+      internalID: 470220495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1895
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d69fa86cf41614c8b43375feeb8e87
+      internalID: 637447252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_6
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1895
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc6974d651a46ef43a8b921df3a6c280
+      internalID: 1698752417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_7
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1895
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6eb8d850dd96e44c9c10da13a58dde3
+      internalID: 12380733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_8
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 1895
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11e537ae41fe7e4e82087ccf4a53ef3
+      internalID: 1889021237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_9
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 1895
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a303b6167144e54691feec6334fa70c
+      internalID: -2044994533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1425
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a39d03921e01b4d85f00a891d011d6
+      internalID: -1784683613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_11
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1425
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6b57473a951a2478f2edcc8e4575a0
+      internalID: 1883038681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_12
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1425
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2746a19e1c9e148b04dcd6b408231b
+      internalID: -45417060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_13
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 1425
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66aff7d38112bf4cb111268e612d16a
+      internalID: -48091518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_14
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 1425
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855a95386b90d2b47b3fe1f046fe043e
+      internalID: -1599092695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 955
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f72672260f6f045ad9b4819ee747a3
+      internalID: -1184160683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_16
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 955
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c74285a7a96424479fbf4c36945b699
+      internalID: 1543420684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_17
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 955
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39d83289a45f2b4dab192c4eac66cdf
+      internalID: 587266809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_18
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 955
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d8b78239aa86446abe4d8007ab1384
+      internalID: 1720350510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_19
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 955
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b436d4e3961c7449097bbfd0f17c00
+      internalID: 1087779059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 485
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79492a80e1d7b141a92e1f08c4af593
+      internalID: 2147374791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_21
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 485
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb321525e9ca7d4d82e138974b3b85f
+      internalID: 994351145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_22
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 485
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5153fdc660932da4e90c4708c5ad7f67
+      internalID: -1240811283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_23
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 485
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f768078677c39ec45bc1ccf02a3c857b
+      internalID: 726754351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_24
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 485
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92150e1d2de160e46bdb7ec0edb39f4e
+      internalID: 785565335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe4017d9ea42d44daf553bb0c28e949
+      internalID: -1099160632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_26
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 15
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb59d3e44cd49364ca92e7c4b986d084
+      internalID: 2143792224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_27
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 15
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07af839ec935a8943a9fe080b6323d02
+      internalID: -706832136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Face_Animation_Layla_remade_28
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 15
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab8e32f860b33649bae32c79414950f
+      internalID: 1758736246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f681fe7feb7d7634faccbf7118187e78
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Face_Animation_Layla_remade_0: -111245107
+      Face_Animation_Layla_remade_1: 1206773591
+      Face_Animation_Layla_remade_10: -1784683613
+      Face_Animation_Layla_remade_11: 1883038681
+      Face_Animation_Layla_remade_12: -45417060
+      Face_Animation_Layla_remade_13: -48091518
+      Face_Animation_Layla_remade_14: -1599092695
+      Face_Animation_Layla_remade_15: -1184160683
+      Face_Animation_Layla_remade_16: 1543420684
+      Face_Animation_Layla_remade_17: 587266809
+      Face_Animation_Layla_remade_18: 1720350510
+      Face_Animation_Layla_remade_19: 1087779059
+      Face_Animation_Layla_remade_2: -2108924980
+      Face_Animation_Layla_remade_20: 2147374791
+      Face_Animation_Layla_remade_21: 994351145
+      Face_Animation_Layla_remade_22: -1240811283
+      Face_Animation_Layla_remade_23: 726754351
+      Face_Animation_Layla_remade_24: 785565335
+      Face_Animation_Layla_remade_25: -1099160632
+      Face_Animation_Layla_remade_26: 2143792224
+      Face_Animation_Layla_remade_27: -706832136
+      Face_Animation_Layla_remade_28: 1758736246
+      Face_Animation_Layla_remade_3: 1989872303
+      Face_Animation_Layla_remade_4: 470220495
+      Face_Animation_Layla_remade_5: 637447252
+      Face_Animation_Layla_remade_6: 1698752417
+      Face_Animation_Layla_remade_7: 12380733
+      Face_Animation_Layla_remade_8: 1889021237
+      Face_Animation_Layla_remade_9: -2044994533
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

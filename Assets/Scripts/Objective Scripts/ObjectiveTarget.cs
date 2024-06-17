@@ -1,25 +1,20 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObjectiveTarget : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> attachmentsToDisable;
-    [SerializeField] private List<GameObject> attachmentsToEnable;
+    [SerializeField] private UnityEvent OnObjectiveStart;
+    [SerializeField] private UnityEvent OnObjectiveComplete;
     public ObjectiveType requiredType;
     private bool objectiveActive;
 
     // Start is called before the first frame update
     private void Start()
     {
-        foreach (GameObject obj in attachmentsToDisable)
-        {
-            obj.SetActive(true);
-        }
-        foreach (GameObject obj in attachmentsToEnable)
-        {
-            obj.SetActive(false);
-        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,20 +24,14 @@ public class ObjectiveTarget : MonoBehaviour
             if (item.ObjectiveType == requiredType)
             {
                 EventBus<OnObjectiveComplete>.Invoke(new OnObjectiveComplete(item));
+                OnObjectiveComplete.Invoke();
             }
         }
         if (!objectiveActive && other.gameObject.layer == LayerMask.NameToLayer("PlayerBody"))
         {
             objectiveActive = true;
             EventBus<OnObjectiveActivated>.Invoke(new OnObjectiveActivated(requiredType));
-            foreach (GameObject obj in attachmentsToDisable)
-            {
-                obj.SetActive(false);
-            }
-            foreach (GameObject obj in attachmentsToEnable)
-            {
-                obj.SetActive(true);
-            }
+            OnObjectiveStart.Invoke();
         }
     }
 
