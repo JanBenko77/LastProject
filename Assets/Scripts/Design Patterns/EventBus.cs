@@ -23,3 +23,18 @@ public class OnObjectiveActivated : Event{
     }
 }
 
+public class OnTeleporterEntered : Event
+{
+    public OnTeleporterEntered()
+    {
+
+    }
+}
+
+public class OnAnimationComplete : Event
+{
+    public OnAnimationComplete()
+    {
+
+    }
+}
