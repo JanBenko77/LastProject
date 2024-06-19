@@ -49,5 +49,5 @@ MonoBehaviour:
   Flow: 0.1
   density: 3
   normalLimit: 1
-  grassAmountToGenerate: 100000
+  grassAmountToGenerate: 10000
   generationDensity: 1

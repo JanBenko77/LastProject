@@ -23,11 +23,9 @@ public class GenericSingelton<T> : MonoBehaviour where T : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        else{
+            _instance = gameObject.GetComponent<T>();
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }
