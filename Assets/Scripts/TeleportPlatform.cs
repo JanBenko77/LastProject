@@ -5,7 +5,7 @@ using UnityEngine;
 public class TeleportPlatform : MonoBehaviour
 {
     public Transform destination;
-    private Transform player;
+    [SerializeField] private Transform player;
 
     private void OnEnable()
     {
@@ -21,13 +21,14 @@ public class TeleportPlatform : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            player = other.gameObject.transform;
+            //player = other.GetComponentInParent<GameObject>().transform;
             EventBus<OnTeleporterEntered>.Invoke(new OnTeleporterEntered());
         }
     }
 
     private void Teleport(OnAnimationComplete pEvent)
     {
+        Debug.Log("This got called");
         player.position = destination.position + new Vector3(0, 1, 0);
     }
 }

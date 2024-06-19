@@ -13,6 +13,8 @@ public class FadeInOut : MonoBehaviour
     private int direction = 0;
     private float time = 0f;
 
+    public Canvas canvas;
+
     private void Start()
     {
         texture = new Texture2D(1, 1);
@@ -22,6 +24,7 @@ public class FadeInOut : MonoBehaviour
 
     private void OnGUI()
     {
+
         if (alpha > 0f) GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), texture);
         if (direction != 0)
         {
@@ -36,6 +39,7 @@ public class FadeInOut : MonoBehaviour
             else if (alpha >= 1f)
             {
                 direction = 0;
+                Debug.Log("Animation finished");
                 EventBus<OnAnimationComplete>.Invoke(new OnAnimationComplete());
                 StartCoroutine(FadeCoroutine());
             }
