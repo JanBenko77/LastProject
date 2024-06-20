@@ -27,14 +27,6 @@ public class PhysicsHand : MonoBehaviour
     public PhysicsHandInteractor interactor;
    //public static bool isClimbing = false;
 
-    private bool isTeleporting = false;
-
-    private void OnEnable()
-    {
-        EventBus<OnTeleporterEntered>.OnEvent += StopMovement;
-        EventBus<OnAnimationComplete>.OnEvent += ContinueMovement;
-    }
-
     private void Start()
     {
         transform.position = target.position;
@@ -47,23 +39,10 @@ public class PhysicsHand : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!isTeleporting)
-        {
-            PIDMovement();
-            PIDRotation();
-            if (isGrabbing) ClimbLaw();
-            else if (isColliding) HookesLaw();
-        }
-    }
-
-    private void StopMovement(OnTeleporterEntered pEvent)
-    {
-        isTeleporting = true;
-    }
-
-    private void ContinueMovement(OnAnimationComplete pEvent)
-    {
-        isTeleporting = false;
+        PIDMovement();
+        PIDRotation();
+        if (isGrabbing) ClimbLaw();
+        else if (isColliding) HookesLaw();
     }
 
     private void PIDMovement()
