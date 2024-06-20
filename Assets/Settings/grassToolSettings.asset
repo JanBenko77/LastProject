@@ -24,15 +24,15 @@ MonoBehaviour:
   layerFading: 0100000000000000
   VertexColorSettings: 0
   VertexFade: 0
-  sizeWidth: 0.5
-  sizeLength: 0.5
+  sizeWidth: 1
+  sizeLength: 1
   adjustWidth: 0
   adjustLength: 0
   adjustWidthMax: 2
   adjustHeightMax: 2
   reprojectOffset: 1
   rangeR: 0.5
-  rangeG: 0.5
+  rangeG: 1
   rangeB: 0
   AdjustedColor: {r: 1, g: 1, b: 1, a: 1}
   paintBlockMask:
