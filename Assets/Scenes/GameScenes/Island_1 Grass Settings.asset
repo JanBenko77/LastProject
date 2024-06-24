@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 440ec44fe96241f4ca0cd31186db09e4, type: 3}
-  m_Name: Island_1 Grass
+  m_Name: Island_1 Grass Settings
   m_EditorClassIdentifier: 
   shaderToUse: {fileID: 7200000, guid: 367bcf8bfd48f994eb11587503c35f55, type: 3}
   materialToUse: {fileID: 2100000, guid: a10d1acac11ee504182ba5930c5c26dc, type: 2}
-  grassRandomHeightMin: 2.95
-  grassRandomHeightMax: 2.58
-  bladeRadius: 0.496
+  grassRandomHeightMin: 0
+  grassRandomHeightMax: 0
+  bladeRadius: 0.2
   bladeForwardAmount: 0.38
   bladeCurveAmount: 2
   bottomWidth: 0.1
   MinWidth: 0.01
   MinHeight: 0.01
-  MaxWidth: 0.05
+  MaxWidth: 0.1
   MaxHeight: 0.3
-  windSpeed: 2
+  windSpeed: 10
   windStrength: 0.05
   allowedBladesPerVertex: 4
   allowedSegmentsPerBlade: 4
   affectStrength: 1
-  topTint: {r: 0.96981126, g: 0.92208904, b: 0.37145594, a: 1}
-  bottomTint: {r: 0.13346377, g: 0.6150943, b: 0.18171658, a: 1}
+  topTint: {r: 0.33489975, g: 0.5924529, b: 0.048066884, a: 1}
+  bottomTint: {r: 0.50142443, g: 0.78867924, b: 0.14136694, a: 1}
   drawBounds: 0
   minFadeDistance: 40
   maxDrawDistance: 125

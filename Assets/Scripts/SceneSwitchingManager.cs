@@ -9,6 +9,9 @@ public class SceneSwitchingManager : GenericSingelton<SceneSwitchingManager>
     }
 
     void SwitchScene(OnTeleporterEntered eventObj){
+        SwitchScene();
+    }
+    public void SwitchScene(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

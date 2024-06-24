@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10826455, g: 0.268006, b: 0.427005, a: 1}
+  m_IndirectSpecularColor: {r: 0.108258255, g: 0.26860002, b: 0.4270515, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2120,6 +2120,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1252204918}
+    - target: {fileID: 892513671962218300, guid: 2daed3a99778033458c64b61fbd0b8cc,
+        type: 3}
+      propertyPath: autoUpdate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 892513671962218300, guid: 2daed3a99778033458c64b61fbd0b8cc,
+        type: 3}
+      propertyPath: currentPresets
+      value: 
+      objectReference: {fileID: 11400000, guid: 85cae64a351e1d645a728e509e7a4f8c,
+        type: 2}
     - target: {fileID: 1549097380033953653, guid: 2daed3a99778033458c64b61fbd0b8cc,
         type: 3}
       propertyPath: m_Mesh
@@ -2215,6 +2226,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 757850295}
+    - target: {fileID: 3508080961882287434, guid: 2daed3a99778033458c64b61fbd0b8cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4035123137664454017, guid: 2daed3a99778033458c64b61fbd0b8cc,
         type: 3}
       propertyPath: m_Mesh
@@ -2235,6 +2251,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1681548904}
+    - target: {fileID: 4481494567235843445, guid: 2daed3a99778033458c64b61fbd0b8cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4637679399484359842, guid: 2daed3a99778033458c64b61fbd0b8cc,
         type: 3}
       propertyPath: m_IsActive
