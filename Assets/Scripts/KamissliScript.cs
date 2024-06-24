@@ -6,10 +6,12 @@ using UnityEngine.Events;
 
 public class KamissliScript : MonoBehaviour
 {
+    [SerializeField] private BoxCollider bc;
 
-    [SerializeField] private UnityEvent OnTriggerEnter;
+    [SerializeField] private Animator anime;
 
-    Animator anime;
+    [SerializeField] private UnityEvent OnTrigger;
+
 
     private void OnEnable()
     {
@@ -21,9 +23,15 @@ public class KamissliScript : MonoBehaviour
         EventBus<OnAnimationComplete>.OnEvent -= Func;
     }
 
-    private void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        anime = GetComponent<Animator>();
+        if (bc != null)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                OnTrigger.Invoke();
+            }
+        }
     }
 
     private void Func(OnAnimationComplete pEvent)
