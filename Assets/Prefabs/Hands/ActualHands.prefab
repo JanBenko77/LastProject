@@ -689,7 +689,7 @@ Transform:
   - {fileID: 2780766103547934546}
   m_Father: {fileID: 5392817082125103701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &6965581451621836982
+--- !u!82 &7758396130636498231
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -701,7 +701,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5f911feb09bb9d24aae689a70c89d283, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
