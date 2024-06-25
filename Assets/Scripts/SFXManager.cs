@@ -20,7 +20,6 @@ public class SFXManager : MonoBehaviour
         audioSource.loop = true;
         audioSource.Play();
     }
-
     public void PlaySound(AudioClip clip)
     {
         audioSource.loop = false;
