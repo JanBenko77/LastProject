@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Island_3 Grass
   m_EditorClassIdentifier: 
   shaderToUse: {fileID: 0}
-  materialToUse: {fileID: 0}
+  materialToUse: {fileID: 2100000, guid: a10d1acac11ee504182ba5930c5c26dc, type: 2}
   grassRandomHeightMin: 0
   grassRandomHeightMax: 0
   bladeRadius: 0.2
