@@ -38,3 +38,11 @@ public class OnAnimationComplete : Event
 
     }
 }
+
+public class OnPlayerThrow : Event
+{
+    public OnPlayerThrow()
+    {
+
+    }
+}

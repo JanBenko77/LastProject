@@ -12,25 +12,28 @@ public class KamissliScript : MonoBehaviour
 
     [SerializeField] private UnityEvent OnTrigger;
 
+    [SerializeField] private Transform player;
 
     private void OnEnable()
     {
         EventBus<OnAnimationComplete>.OnEvent += Func;
+        EventBus<OnPlayerThrow>.OnEvent += UnParentPlayerAndMakeItFly;
     }
 
     private void OnDisable()
     {
         EventBus<OnAnimationComplete>.OnEvent -= Func;
+        EventBus<OnPlayerThrow>.OnEvent -= UnParentPlayerAndMakeItFly;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (bc != null)
+        Debug.Log("Yep");
+        Debug.Log(other.gameObject.name);
+        if (other.gameObject.CompareTag("Player"))
         {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                OnTrigger.Invoke();
-            }
+            Debug.Log("Triggered");
+            OnTrigger.Invoke();
         }
     }
 
@@ -38,5 +41,12 @@ public class KamissliScript : MonoBehaviour
     {
         Debug.Log("Started"); 
         anime.SetTrigger("TrGrow");
+    }
+
+    private void UnParentPlayerAndMakeItFly(OnPlayerThrow pEvent)
+    {
+        player.parent = null;
+        player.GetComponentInChildren<Rigidbody>().useGravity = true;
+        player.GetComponentInChildren<Rigidbody>().AddForce(Vector3.forward * 1000, ForceMode.Impulse);
     }
 }
