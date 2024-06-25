@@ -46,6 +46,7 @@ public class KamissliScript : MonoBehaviour
     private void UnParentPlayerAndMakeItFly(OnPlayerThrow pEvent)
     {
         player.parent = null;
+        player.GetComponent<Freeze>().fly = false;
         player.GetComponentInChildren<Rigidbody>().useGravity = true;
         player.GetComponentInChildren<Rigidbody>().AddForce(Vector3.forward * 1000, ForceMode.Impulse);
     }

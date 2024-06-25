@@ -11,6 +11,8 @@ public class Freeze : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform toBeThrown;
 
+    public bool fly = false;
+
     public void FreezePlayer()
     {
         Debug.Log("Freeze");
@@ -19,6 +21,20 @@ public class Freeze : MonoBehaviour
 
         player.GetComponentInChildren<Rigidbody>().useGravity = false;
         player.parent = toBeThrown;
+        player.position = toBeThrown.position;
+        fly = true;
+    }
+
+    private void Update()
+    {
+        if (fly)
+        {
+            FollowToBeThrown();
+        }
+    }
+
+    public void FollowToBeThrown()
+    {
         player.position = toBeThrown.position;
     }
 }
