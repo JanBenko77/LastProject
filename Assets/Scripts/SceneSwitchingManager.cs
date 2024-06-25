@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneSwitchingManager : GenericSingelton<SceneSwitchingManager>
 {
@@ -20,7 +21,12 @@ public class SceneSwitchingManager : GenericSingelton<SceneSwitchingManager>
     private void OnTaskComplete(OnObjectiveComplete eventObj){
         tasks++;
         if (tasks == 2){
-            Invoke("SwitchScene",1);
+            Invoke("SwitchScene", 1);
         }
+    }
+
+    public void QuitApp()
+    {
+        Application.Quit();
     }
 }
