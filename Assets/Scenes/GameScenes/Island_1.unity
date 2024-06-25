@@ -5180,6 +5180,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2018255582339759727, guid: fa1522b7575dfe6488a1698b097bd2e0,
+        type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3926177173822246772, guid: fa1522b7575dfe6488a1698b097bd2e0,
         type: 3}
       propertyPath: m_Radius
@@ -5302,7 +5307,7 @@ PrefabInstance:
     - target: {fileID: 3748940000350112510, guid: 130fb0b3d16c57e41aa8381b5bf6780c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3748940000350112516, guid: 130fb0b3d16c57e41aa8381b5bf6780c,
         type: 3}
@@ -6496,7 +6501,7 @@ PrefabInstance:
     - target: {fileID: 115847557217372388, guid: 7e4ef602aa8c0944aaa7fb66c2552cf2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 115847557217372388, guid: 7e4ef602aa8c0944aaa7fb66c2552cf2,
         type: 3}
