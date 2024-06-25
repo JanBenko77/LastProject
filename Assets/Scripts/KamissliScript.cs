@@ -48,6 +48,6 @@ public class KamissliScript : MonoBehaviour
         player.parent = null;
         player.GetComponent<Freeze>().fly = false;
         player.GetComponentInChildren<Rigidbody>().useGravity = true;
-        player.GetComponentInChildren<Rigidbody>().AddForce(Vector3.forward * 1000, ForceMode.Impulse);
+        player.GetComponentInChildren<Rigidbody>().AddForce(Vector3.forward * 2000, ForceMode.Impulse);
     }
 }
