@@ -15,11 +15,6 @@ public class ObjectiveItem : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnItemDelivered(OnObjectiveComplete pEvent){
         if(pEvent.item == this){
             Debug.Log("Item Delivered");
