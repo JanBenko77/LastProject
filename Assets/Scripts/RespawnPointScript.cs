@@ -13,5 +13,13 @@ public class RespawnPointScript : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if(other.tag == "RespawnPlane")
             transform.position = spawnPoint;
+        if (other.tag == "WinPlane")
+            EventBus<OnTeleporterEntered>.Invoke(new OnTeleporterEntered());
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "WinPlane")
+            EventBus<OnTeleporterEntered>.Invoke(new OnTeleporterEntered());
     }
 }
