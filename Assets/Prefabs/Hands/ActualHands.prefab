@@ -394,7 +394,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 4294967295
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 4629554391288455161}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -1535,7 +1535,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 4294967295
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 6422078552713613434}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -1669,6 +1669,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3525784609735619157}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &6422078552713613434 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7634115970301354543, guid: 77459436eeb3aeb48871d657bcb5fd7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3525784609735619157}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3646383024063711204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1742,6 +1748,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c99d0ba506360a43b8cea08ef805d25, type: 3}
+--- !u!4 &4629554391288455161 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8261278722033457181, guid: 3c99d0ba506360a43b8cea08ef805d25,
+    type: 3}
+  m_PrefabInstance: {fileID: 3646383024063711204}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4629584960152092215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8261036530400639443, guid: 3c99d0ba506360a43b8cea08ef805d25,
