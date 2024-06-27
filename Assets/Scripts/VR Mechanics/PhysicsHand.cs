@@ -30,6 +30,10 @@ public class PhysicsHand : MonoBehaviour
     public bool isGrabbing{get; private set;}
 
     public bool isHovering{get; private set;}
+
+    [SerializeField] private AudioClip grabSound;
+    [SerializeField] private AudioSource audioSource;
+
     private void Start()
     {
         if(meshRenderer == null)
@@ -172,6 +176,9 @@ public class PhysicsHand : MonoBehaviour
     }
 
     void OnGrabEnter(OnGrabEnter args){
+
+        audioSource.PlayOneShot(grabSound);
+
         if(args.hand != this)
             DestroyJoint();
         else 

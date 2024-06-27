@@ -10,6 +10,17 @@ public class SceneSwitchingManager : GenericSingelton<SceneSwitchingManager>
         EventBus<OnObjectiveComplete>.OnEvent += OnTaskComplete;
     }
 
+    private void Update()
+    {
+        //if i press a key, switch scene build index -1, if i press d key, switch scene build index +1
+        if (Input.GetKeyDown(KeyCode.A)){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
+        }
+        if (Input.GetKeyDown(KeyCode.D)){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        }
+    }
+
     void SwitchScene(OnTeleporterEntered eventObj){
         SwitchScene();
     }
