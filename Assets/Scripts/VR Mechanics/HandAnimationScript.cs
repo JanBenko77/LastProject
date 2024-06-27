@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandAnimationScript : MonoBehaviour
 {
-    [SerializeField] private InputActionProperty pinchProperty;
-    [SerializeField] private InputActionProperty gripProperty;
+    [SerializeField] XRController controller;
     //[SerializeField] private SkinnedMeshRenderer mesh;
     private Animator handAnimatior;
     
@@ -17,10 +16,10 @@ public class HandAnimationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float triggerValue = pinchProperty.action.ReadValue<float>();
-        handAnimatior.SetFloat("Trigger", triggerValue);
+        InputHelpers.TryReadSingleValue(controller.inputDevice,InputHelpers.Button.Trigger,out float triggerValue);
+        handAnimatior.SetFloat("Trigger",triggerValue);
 
-        float gripValue = gripProperty.action.ReadValue<float>();
+        InputHelpers.TryReadSingleValue(controller.inputDevice,InputHelpers.Button.Grip,out float gripValue);
         handAnimatior.SetFloat("Grip",gripValue);
     }
 }

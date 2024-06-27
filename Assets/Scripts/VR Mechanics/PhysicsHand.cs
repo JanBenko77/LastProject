@@ -23,18 +23,29 @@ public class PhysicsHand : MonoBehaviour
     private BoxCollider boxCollider;
 
     [Header("Grabbing")]
-    public bool isGrabbing = false;
     public PhysicsHandInteractor interactor;
+    [SerializeField] private SkinnedMeshRenderer meshRenderer;
    //public static bool isClimbing = false;
+    [SerializeField] private RenderSettings renderSettings;
+    public bool isGrabbing{get; private set;}
 
+    public bool isHovering{get; private set;}
     private void Start()
     {
+        if(meshRenderer == null)
+            meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        interactor = target.GetComponent<PhysicsHandInteractor>();
+        interactor.physicsHand = this;
         transform.position = target.position;
         transform.rotation = target.rotation;
         rb = GetComponent<Rigidbody>();
         rb.maxAngularVelocity = float.PositiveInfinity;
         previousPosition = transform.position;
         boxCollider = GetComponent<BoxCollider>();
+        EventBus<OnClimbHoverEnter>.OnEvent += OnHoverEnter;
+        EventBus<OnClimbHoverExit>.OnEvent += OnHoverExit;
+        EventBus<OnGrabEnter>.OnEvent += OnGrabEnter;
+        EventBus<OnGrabExit>.OnEvent += OnGrabExit;
     }
 
     private void LateUpdate()
@@ -109,20 +120,12 @@ public class PhysicsHand : MonoBehaviour
 
     public void DestroyJoint(){
         isGrabbing = false;
-        interactor.SetHoverMaterial();
         Destroy(GetComponent<FixedJoint>());
     }
+
     public void CreateJoint(){
         isGrabbing = true;
-        interactor.SetGrabMaterial();
-        gameObject.AddComponent<FixedJoint>();
-    }
-
-    public void CreateJoint(Rigidbody body){
-        isGrabbing = true;
-        interactor.SetGrabMaterial();
         FixedJoint joint = gameObject.AddComponent<FixedJoint>();
-        joint.connectedBody = body;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -143,5 +146,48 @@ public class PhysicsHand : MonoBehaviour
     public void ContinueCollision()
     {
         boxCollider.enabled = true;
+    }
+
+    public void SetMaterial(){
+        if(isGrabbing)
+            meshRenderer.material = renderSettings.grabMaterial;
+        else if(isHovering)
+            meshRenderer.material = renderSettings.hoverMaterial;
+        else
+            meshRenderer.material = renderSettings.defaultMaterial;
+    }
+
+    void OnHoverEnter(OnClimbHoverEnter args){
+        if(args.hand == this) {
+            isHovering = true;
+            SetMaterial();
+        }
+    }
+
+    void OnHoverExit(OnClimbHoverExit args){
+        if(args.hand == this) {
+            isHovering = false;
+            SetMaterial();
+        }
+    }
+
+    void OnGrabEnter(OnGrabEnter args){
+        if(args.hand != this)
+            DestroyJoint();
+        else 
+            CreateJoint();
+        SetMaterial();
+    }
+    void OnGrabExit(OnGrabExit args){
+        if(args.hand == this)
+            DestroyJoint();
+        SetMaterial();
+    }
+
+    void OnDestroy(){
+        EventBus<OnClimbHoverEnter>.OnEvent -= OnHoverEnter;
+        EventBus<OnClimbHoverExit>.OnEvent -= OnHoverExit;
+        EventBus<OnGrabEnter>.OnEvent -= OnGrabEnter;
+        EventBus<OnGrabExit>.OnEvent -= OnGrabExit;
     }
 }

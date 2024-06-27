@@ -46,3 +46,36 @@ public class OnPlayerThrow : Event
 
     }
 }
+
+public class OnClimbHoverEnter : Event{
+
+    public PhysicsHand hand{get; private set;}
+    public OnClimbHoverEnter(PhysicsHand pHand)
+    {
+        hand = pHand;
+    }
+}
+
+public class OnClimbHoverExit : Event{
+    public PhysicsHand hand{get; private set;}
+    public OnClimbHoverExit(PhysicsHand pHand)
+    {
+        hand = pHand;
+    }
+}
+
+public class OnGrabEnter : Event{
+    public PhysicsHand hand{get; private set;}
+    public OnGrabEnter(PhysicsHand pHand)
+    {
+        hand = pHand;
+    }
+}
+
+public class OnGrabExit : Event{
+    public PhysicsHand hand{get; private set;}
+    public OnGrabExit(PhysicsHand pHand)
+    {
+        hand = pHand;
+    }
+}

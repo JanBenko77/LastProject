@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -19,32 +18,21 @@ public class ClimableInteractable : XRSimpleInteractable
 
     //Try check here to disable both hands for hookes law
     void OnHoverEnter(HoverEnterEventArgs args){
-        Debug.Log("hovering");
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
-        interactor.SetHoverMaterial();
+        EventBus<OnClimbHoverEnter>.Invoke(new OnClimbHoverEnter(interactor.physicsHand));
     }
 
     void OnHoverExit(HoverExitEventArgs args){
-        Debug.Log("Hover exited");
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
-        interactor.SetDefaultMaterial();
+        EventBus<OnClimbHoverExit>.Invoke(new OnClimbHoverExit(interactor.physicsHand));
     }
 
     void OnGrabEnter(SelectEnterEventArgs args){
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
-        if(lastHand != null)
-        lastHand.DestroyJoint();
-        lastHand = interactor.physicsHand;
-        if(rb != null)
-            lastHand.CreateJoint(rb);
-        else
-            lastHand.CreateJoint();
+        EventBus<OnGrabEnter>.Invoke(new OnGrabEnter(interactor.physicsHand));
     }
     void OnGrabExit(SelectExitEventArgs args){
         PhysicsHandInteractor interactor = args.interactorObject.transform.gameObject.GetComponent<PhysicsHandInteractor>();
-        PhysicsHand hand = interactor.physicsHand;
-        hand.DestroyJoint();
-        if(lastHand == hand)
-            lastHand = null;
+        EventBus<OnGrabExit>.Invoke(new OnGrabExit(interactor.physicsHand));
     }
 }
