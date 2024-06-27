@@ -149,12 +149,12 @@ PrefabInstance:
     - target: {fileID: 5392817082125103701, guid: 7e4ef602aa8c0944aaa7fb66c2552cf2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.799
       objectReference: {fileID: 0}
     - target: {fileID: 5392817082125103701, guid: 7e4ef602aa8c0944aaa7fb66c2552cf2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.315
       objectReference: {fileID: 0}
     - target: {fileID: 5392817082125103701, guid: 7e4ef602aa8c0944aaa7fb66c2552cf2,
         type: 3}
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0ef5bae7c84d0479d753169a3c8966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &1531074061
+--- !u!21 &1157219222
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -1444,7 +1444,7 @@ MonoBehaviour:
     normal: {x: -0.000021452895, y: 1, z: 0}
     length: {x: 0.1, y: 0.1}
     color: {x: 1.1697911, y: 1.638933, z: 0.42830187}
-  m_InstantiatedMaterial: {fileID: 1531074061}
+  m_InstantiatedMaterial: {fileID: 1157219222}
 --- !u!114 &929660782791795036
 MonoBehaviour:
   m_ObjectHideFlags: 0
